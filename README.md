@@ -47,31 +47,7 @@ Sitio estático de una sola página, sin dependencias ni framework:
 ## Ejecución local
 
 Al ser un sitio estático, puede abrirse `index.html` directamente en el navegador. Para
-que las imágenes y los enlaces funcionen igual que en producción, se recomienda servirlo
-con un servidor local:
-
-```bash
-python -m http.server 8000
-# Abrir http://localhost:8000
-```
-
-## Despliegue
-
-El sitio se publica como página estática (por ejemplo en Netlify o GitHub Pages). No
-requiere proceso de build: el contenido se sirve tal cual.
-
-## Configuración
-
-Los datos de contacto se editan al inicio del `<script>` en `index.html`:
-
-```js
-const WHATSAPP  = "573153650509";          // Número en formato 57 + celular, sin signos
-const INSTAGRAM = "lasdeliciasdeadrifit";  // Usuario de Instagram, sin @
-```
-
-El catálogo (`PRODUCTS`) y las anchetas (`ANCHETAS`) se definen como arreglos en ese mismo
-script. Para agregar o modificar un producto, basta con editar el arreglo y colocar la
-imagen correspondiente en `img/`.
+que las imágenes y los enlaces funcionen igual que en producción.
 
 ## Contacto
 
