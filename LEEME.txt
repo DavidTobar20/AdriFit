@@ -1,0 +1,23 @@
+LAS DELICIAS DE ADRI FIT — Sitio web
+=====================================
+
+CONTENIDO
+- index.html      → tu página web (un solo archivo)
+- img/            → fotos de productos + tu logo (logo.png y logo-white.png)
+
+DATOS YA CONFIGURADOS
+- WhatsApp: 315 365 0509  (en el código como 573153650509)
+- Instagram: @lasdeliciasdeadrifit
+- Tu logo real ya está incluido en el encabezado, el hero y el pie de página.
+Si algún dato cambia, abre index.html y edítalo en el bloque "CONFIGURACIÓN" (casi al final).
+
+CÓMO PUBLICARLO (gratis y rápido)
+1) Entra a https://app.netlify.com/drop
+2) Arrastra TODA la carpeta "sitio-adrifit" a la página.
+3) Listo: tendrás un link en línea. Después puedes conectar tu dominio propio (.co).
+
+MEJORAR LAS FOTOS
+Reemplaza cada archivo en la carpeta img/ por tu foto en alta resolución,
+conservando el MISMO nombre. Tamaños ideales: tortas/postres 1200x900 px,
+anchetas 1080x1080 px. Comprime en Squoosh.app o TinyPNG (menos de 250 KB c/u).
+NO cambies logo.png ni logo-white.png.
