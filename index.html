@@ -75,8 +75,8 @@ header.nav{position:sticky; top:0; z-index:60; background:rgba(255,255,255,.92);
 .hero-cta{display:flex; gap:14px; flex-wrap:wrap}
 /* foto vertical en marco elegante */
 .hero-photo{position:relative}
-.hero-photo::before{content:""; position:absolute; inset:18px -16px -16px 18px; border:1.5px solid var(--hoja-claro); border-radius:24px; z-index:0}
-.hero-frame{position:relative; z-index:1; aspect-ratio:4/5; border-radius:24px; overflow:hidden; background:linear-gradient(135deg, rgba(143,193,82,.22), rgba(67,160,65,.14)); box-shadow:var(--sombra)}
+.hero-frame::after{content:""; position:absolute; inset:12px; border:1px solid rgba(255,255,255,.55); border-radius:16px; pointer-events:none; z-index:2}
+.hero-frame{position:relative; z-index:1; aspect-ratio:3/4; border-radius:22px; overflow:hidden; background:linear-gradient(135deg, rgba(143,193,82,.18), rgba(67,160,65,.12)); box-shadow:var(--sombra); border:1px solid var(--linea)}
 .hero-frame img{width:100%; height:100%; object-fit:cover}
 .hero-frame .ph-fallback{display:none; position:absolute; inset:0; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:var(--bosque)}
 .hero-frame .ph-fallback svg{width:42px;height:42px;color:var(--hoja)}
@@ -101,7 +101,7 @@ header.nav{position:sticky; top:0; z-index:60; background:rgba(255,255,255,.92);
 .cats .sec-head{text-align:center; margin:0 auto 36px}
 .cats-row{display:grid; grid-template-columns:repeat(4,1fr); gap:24px}
 .cat{display:flex; flex-direction:column; align-items:center; gap:12px; text-decoration:none; cursor:pointer; background:none; border:0; font:inherit}
-.cat-img{width:160px; height:160px; border-radius:50%; overflow:hidden; border:4px solid #fff; box-shadow:var(--sombra); background:linear-gradient(135deg,rgba(143,193,82,.32),rgba(67,160,65,.2)); transition:transform .25s}
+.cat-img{width:200px; height:200px; border-radius:50%; overflow:hidden; border:4px solid #fff; box-shadow:var(--sombra); background:linear-gradient(135deg,rgba(143,193,82,.32),rgba(67,160,65,.2)); transition:transform .25s}
 .cat:hover .cat-img{transform:translateY(-6px)}
 .cat-img img{width:100%;height:100%;object-fit:cover}
 .cat b{font-family:var(--serif); font-style:italic; font-weight:700; font-size:1.2rem; color:var(--bosque)}
@@ -149,7 +149,7 @@ section{padding:74px 0}
 .a-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px}
 .a-card{background:var(--nata); border-radius:var(--r); overflow:hidden; border:1px solid var(--linea); box-shadow:0 14px 36px -26px rgba(18,104,57,.4); display:flex; flex-direction:column; transition:transform .25s}
 .a-card:hover{transform:translateY(-5px)}
-.a-card .thumb{aspect-ratio:1/1}
+.a-card .thumb{aspect-ratio:3/4}
 .a-body{padding:18px 18px 20px; display:flex; flex-direction:column; gap:10px; flex:1}
 .a-top{display:flex; align-items:baseline; justify-content:space-between; gap:10px}
 .a-card h3{font-size:1.3rem}
@@ -173,8 +173,8 @@ section{padding:74px 0}
 .about{background:rgba(143,193,82,.06)}
 .about-in{display:grid; grid-template-columns:.9fr 1.1fr; gap:54px; align-items:center}
 .about-photo{position:relative}
-.about-photo::before{content:""; position:absolute; inset:20px -16px -16px 20px; border:1.5px solid var(--hoja-claro); border-radius:22px; z-index:0}
-.photo-frame{position:relative; z-index:1; aspect-ratio:4/5; border-radius:22px; overflow:hidden; background:linear-gradient(135deg, rgba(143,193,82,.2), rgba(67,160,65,.14)); box-shadow:var(--sombra)}
+.photo-frame::after{content:""; position:absolute; inset:12px; border:1px solid rgba(255,255,255,.55); border-radius:14px; pointer-events:none; z-index:2}
+.photo-frame{position:relative; z-index:1; aspect-ratio:4/5; border-radius:20px; overflow:hidden; background:linear-gradient(135deg, rgba(143,193,82,.2), rgba(67,160,65,.14)); box-shadow:var(--sombra); border:1px solid var(--linea)}
 .photo-frame img{width:100%;height:100%;object-fit:cover}
 .photo-fallback{display:none; position:absolute; inset:0; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:var(--bosque)}
 .photo-fallback svg{width:42px;height:42px;color:var(--hoja)}
@@ -233,8 +233,8 @@ footer a:hover{opacity:1; color:var(--oro-claro)}
   .hero-photo{max-width:380px; margin:0 auto; order:-1}
   .pillars-in{grid-template-columns:repeat(2,1fr)}
   .pillar:nth-child(3){border-left:0}
-  .cats-row{grid-template-columns:repeat(4,1fr); gap:14px}
-  .cat-img{width:120px;height:120px}
+  .cats-row{grid-template-columns:repeat(4,1fr); gap:16px}
+  .cat-img{width:150px;height:150px}
   .grid,.a-grid{grid-template-columns:repeat(2,1fr)}
   .occasions{grid-template-columns:repeat(2,1fr)}
   .about-in{grid-template-columns:1fr; gap:34px}
@@ -252,7 +252,7 @@ footer a:hover{opacity:1; color:var(--oro-claro)}
   .brand img.logo{height:48px}
   .grid,.a-grid,.pillars-in,.occasions,.foot-grid{grid-template-columns:1fr}
   .cats-row{grid-template-columns:repeat(2,1fr)}
-  .cat-img{width:130px;height:130px}
+  .cat-img{width:160px;height:160px}
   .pillar{border-left:0; border-top:1px solid var(--linea)}
   .pillar:first-child{border-top:0}
   section{padding:54px 0}
@@ -361,7 +361,7 @@ footer a:hover{opacity:1; color:var(--oro-claro)}
         <b>Panes</b><span class="lbl">Ver <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </button>
       <button class="cat" onclick="filterTo('postres')">
-        <span class="cat-img"><img src="img/cupcakes.jpg" alt="Postres" loading="lazy" onerror="this.style.display='none'"></span>
+        <span class="cat-img"><img src="img/postres-catalogo.jpg" alt="Postres" loading="lazy" onerror="this.style.display='none'"></span>
         <b>Postres</b><span class="lbl">Ver <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </button>
     </div>
@@ -402,10 +402,16 @@ footer a:hover{opacity:1; color:var(--oro-claro)}
       <p>Diseñamos detalles especiales para las fechas que más importan. Reserva con anticipación y aseguramos tu pedido.</p>
     </div>
     <div class="occasions">
-      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 000-7.8z"/></svg><h3>Día de la Madre</h3><p>Desayunos "Mamá feliz" y "Corazón saludable".</p></div>
-      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11h16v9H4zM2 7h20v4H2zM12 7V4M9 4a2 2 0 113 1M15 4a2 2 0 10-3 1"/></svg><h3>Cumpleaños</h3><p>Tortas y anchetas con cartel y arreglo de globos.</p></div>
-      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 9l-5 4 1.5 7L12 16l-5.5 4L8 13 3 9l6.5-.5z"/></svg><h3>Amor y Amistad</h3><p>Detalles dulces para sorprender a quien quieres.</p></div>
-      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V7l9-4 9 4v14M9 21v-6h6v6"/></svg><h3>Navidad &amp; Fin de Año</h3><p>Regalos saludables para empresa y familia.</p></div>
+      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.4 2.4M15.6 15.6L18 18M18 6l-2.4 2.4M8.4 15.6L6 18"/></svg><h3>Año Nuevo y Reyes</h3><p>Enero · Detalles y desayunos para empezar el año dulce y saludable.</p></div>
+      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 000-7.8z"/></svg><h3>San Valentín</h3><p>14 de febrero · Anchetas y postres para enamorar.</p></div>
+      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22V12M12 12c-3 0-5-2-5-5 3 0 5 2 5 5zM12 12c3 0 5-2 5-5-3 0-5 2-5 5z"/></svg><h3>Día de la Mujer</h3><p>8 de marzo · Detalles para consentir a las mujeres que admiras.</p></div>
+      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a5 5 0 00-5 5c0 3.3 2.5 6 5 6s5-2.7 5-6a5 5 0 00-5-5zM12 14v3M10.5 20h3"/></svg><h3>Día del Niño</h3><p>Abril · Postres y cupcakes saludables para los más pequeños.</p></div>
+      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 000-7.8z"/></svg><h3>Día de la Madre</h3><p>Mayo · Desayunos "Mamá feliz" y "Corazón saludable".</p></div>
+      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h13v7a4 4 0 01-4 4H8a4 4 0 01-4-4V7zM17 9h2a2 2 0 010 4h-2"/></svg><h3>Día del Padre</h3><p>Junio · Desayunos y tortas para celebrar a papá.</p></div>
+      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 9l-5 4 1.5 7L12 16l-5.5 4L8 13 3 9l6.5-.5z"/></svg><h3>Amor y Amistad</h3><p>Septiembre · Detalles dulces para sorprender a quien quieres.</p></div>
+      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 10h6v9H9zM12 10V6M12 6c0-1-1-1-1-2 1 0 1 .6 1 1 0-.4 0-1 1-1 0 1-1 1-1 2z"/></svg><h3>Halloween y Velitas</h3><p>Octubre · Postres temáticos para una noche especial.</p></div>
+      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l5 7h-3l4 6H6l4-6H7l5-7zM12 16v5"/></svg><h3>Navidad y Fin de Año</h3><p>Diciembre · Regalos saludables para empresa y familia.</p></div>
+      <div class="occ reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11h16v9H4zM2 7h20v4H2zM12 7V4M9 4a2 2 0 113 1M15 4a2 2 0 10-3 1"/></svg><h3>Grados, Cumpleaños y Aniversarios</h3><p>Todo el año · Tortas y anchetas con cartel y arreglo de globos.</p></div>
     </div>
   </div>
 </section>
