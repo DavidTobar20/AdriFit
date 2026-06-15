@@ -66,20 +66,26 @@ header.nav{position:sticky; top:0; z-index:60; background:rgba(255,255,255,.92);
 .menu-toggle svg{width:26px;height:26px;stroke:var(--bosque)}
 
 /* ---------- HERO (foto grande) ---------- */
-.hero{position:relative; overflow:hidden; min-height:84vh; display:flex; align-items:center; background:linear-gradient(135deg, var(--verde-oscuro), var(--verde))}
-.hero-media{position:absolute; inset:0; z-index:0}
-.hero-bg{width:100%; height:100%; object-fit:cover}
-.hero-overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(18,104,57,.5), rgba(18,104,57,.66))}
-.hero-inner{position:relative; z-index:2; text-align:center; max-width:840px; margin:0 auto; padding:96px 22px 110px}
-.hero-inner .eyebrow{color:var(--verde-claro); justify-content:center}
-.hero h1{color:#fff; font-size:clamp(2.4rem,5.6vw,4.2rem); margin:16px 0 0; text-shadow:0 2px 26px rgba(0,0,0,.2)}
-.hero h1 em{color:var(--verde-claro); font-style:italic}
-.hero p.lead{color:rgba(255,255,255,.92); max-width:48ch; margin:18px auto 30px; font-size:1.12rem}
-.hero-cta{display:flex; gap:14px; flex-wrap:wrap; justify-content:center}
-.hero-wave{position:absolute; left:0; right:0; bottom:-1px; z-index:2; width:100%; height:64px; display:block}
-.chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; justify-content:center}
-.chip{display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.3); border-radius:999px; padding:8px 14px; font-size:.82rem; font-weight:600; color:#fff}
-.chip svg{width:15px;height:15px;color:var(--verde-claro)}
+.hero{position:relative; overflow:hidden; background:#fff}
+.hero-in{display:grid; grid-template-columns:1.02fr .98fr; gap:50px; align-items:center; padding:72px 0 78px}
+.hero-text .eyebrow{color:var(--hoja)}
+.hero h1{color:var(--bosque); font-size:clamp(2.4rem,5vw,3.9rem); margin:14px 0 0; letter-spacing:-.01em}
+.hero h1 em{color:var(--hoja); font-style:italic}
+.hero p.lead{color:var(--tinta-suave); max-width:40ch; margin:20px 0 30px; font-size:1.12rem}
+.hero-cta{display:flex; gap:14px; flex-wrap:wrap}
+/* foto vertical en marco elegante */
+.hero-photo{position:relative}
+.hero-photo::before{content:""; position:absolute; inset:18px -16px -16px 18px; border:1.5px solid var(--hoja-claro); border-radius:24px; z-index:0}
+.hero-frame{position:relative; z-index:1; aspect-ratio:4/5; border-radius:24px; overflow:hidden; background:linear-gradient(135deg, rgba(143,193,82,.22), rgba(67,160,65,.14)); box-shadow:var(--sombra)}
+.hero-frame img{width:100%; height:100%; object-fit:cover}
+.hero-frame .ph-fallback{display:none; position:absolute; inset:0; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:var(--bosque)}
+.hero-frame .ph-fallback svg{width:42px;height:42px;color:var(--hoja)}
+.hero-frame .ph-fallback b{font-family:var(--serif); font-style:italic; font-weight:700; font-size:1.05rem}
+.hero-frame.noimg img{display:none}
+.hero-frame.noimg .ph-fallback{display:flex}
+.chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:6px}
+.chip{display:inline-flex; align-items:center; gap:7px; background:rgba(143,193,82,.12); border:1px solid var(--linea); border-radius:999px; padding:8px 14px; font-size:.82rem; font-weight:600; color:var(--bosque)}
+.chip svg{width:15px;height:15px;color:var(--hoja)}
 
 /* ---------- PILLARS (fila de íconos) ---------- */
 .pillars{background:rgba(143,193,82,.08); border-bottom:1px solid var(--linea)}
@@ -223,7 +229,8 @@ footer a:hover{opacity:1; color:var(--oro-claro)}
 
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:920px){
-  .hero{min-height:74vh}
+  .hero-in{grid-template-columns:1fr; gap:30px; padding:44px 0}
+  .hero-photo{max-width:380px; margin:0 auto; order:-1}
   .pillars-in{grid-template-columns:repeat(2,1fr)}
   .pillar:nth-child(3){border-left:0}
   .cats-row{grid-template-columns:repeat(4,1fr); gap:14px}
@@ -281,28 +288,34 @@ footer a:hover{opacity:1; color:var(--oro-claro)}
 
 <!-- ===== HERO (foto grande) ===== -->
 <section class="hero" id="inicio">
-  <div class="hero-media" aria-hidden="true">
-    <img class="hero-bg" src="img/hero-torta.jpg" alt="" onerror="this.style.display='none'">
-    <span class="hero-overlay"></span>
-  </div>
-  <div class="hero-inner">
-    <span class="eyebrow">Repostería saludable · Ibagué, Tolima</span>
-    <h1>Celebra los momentos más dulces<br>con una torta <em>inolvidable.</em></h1>
-    <p class="lead">Sin gluten y sin azúcar refinada. Hecha a pedido con ingredientes reales para disfrutar sin remordimientos.</p>
-    <div class="hero-cta">
-      <a class="btn btn-light" id="heroWa" href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.2 0 0 7.2 0 16c0 2.8.7 5.5 2.1 7.9L0 32l8.3-2.2c2.3 1.3 4.9 1.9 7.7 1.9 8.8 0 16-7.2 16-16S24.8 0 16 0zm0 29.3c-2.5 0-4.9-.7-7-1.9l-.5-.3-5 1.3 1.3-4.9-.3-.5C3.4 21 2.7 18.5 2.7 16 2.7 8.7 8.7 2.7 16 2.7S29.3 8.7 29.3 16 23.3 29.3 16 29.3zm7.3-9.9c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.7-.7-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.5 7.1 6.3 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.4-1 2.8-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
-        Hacer mi pedido
-      </a>
-      <a class="btn btn-outline-light" href="#catalogo">Ver el catálogo</a>
+  <div class="wrap hero-in">
+    <div class="hero-text reveal">
+      <span class="eyebrow">Repostería saludable · Ibagué, Tolima</span>
+      <h1>Celebra los momentos más dulces con una torta <em>inolvidable.</em></h1>
+      <p class="lead">Sin gluten y sin azúcar refinada. Hecha a pedido con ingredientes reales.</p>
+      <div class="hero-cta">
+        <a class="btn btn-wa" id="heroWa" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.2 0 0 7.2 0 16c0 2.8.7 5.5 2.1 7.9L0 32l8.3-2.2c2.3 1.3 4.9 1.9 7.7 1.9 8.8 0 16-7.2 16-16S24.8 0 16 0zm0 29.3c-2.5 0-4.9-.7-7-1.9l-.5-.3-5 1.3 1.3-4.9-.3-.5C3.4 21 2.7 18.5 2.7 16 2.7 8.7 8.7 2.7 16 2.7S29.3 8.7 29.3 16 23.3 29.3 16 29.3zm7.3-9.9c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.7-.7-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.5 7.1 6.3 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.4-1 2.8-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
+          Hacer mi pedido
+        </a>
+        <a class="btn btn-ghost" href="#catalogo">Ver el catálogo</a>
+      </div>
+      <div class="chips">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Sin gluten</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Sin azúcar refinada</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Hecho a pedido</span>
+      </div>
     </div>
-    <div class="chips">
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Sin gluten</span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Sin azúcar refinada</span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Hecho a pedido</span>
+    <div class="hero-photo reveal">
+      <div class="hero-frame">
+        <img src="img/hero-torta.jpg" alt="Torta saludable de Las Delicias de Adri Fit" onerror="this.closest('.hero-frame').classList.add('noimg')">
+        <span class="ph-fallback">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c2 3 1 6-1 8 4-1 6-5 4-8M5 21c0-5 4-9 9-9"/></svg>
+          <b>Foto de tu torta</b>
+        </span>
+      </div>
     </div>
   </div>
-  <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path fill="#ffffff" d="M0,42 C240,92 480,8 720,40 C960,72 1200,12 1440,42 L1440,80 L0,80 Z"></path></svg>
 </section>
 
 <!-- ===== PILLARS ===== -->
@@ -348,7 +361,7 @@ footer a:hover{opacity:1; color:var(--oro-claro)}
         <b>Panes</b><span class="lbl">Ver <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </button>
       <button class="cat" onclick="filterTo('postres')">
-        <span class="cat-img"><img src="img/postres-frasco.jpg" alt="Postres" loading="lazy" onerror="this.style.display='none'"></span>
+        <span class="cat-img"><img src="img/cupcakes.jpg" alt="Postres" loading="lazy" onerror="this.style.display='none'"></span>
         <b>Postres</b><span class="lbl">Ver <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </button>
     </div>
