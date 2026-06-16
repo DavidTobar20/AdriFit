@@ -171,7 +171,10 @@ section{padding:74px 0}
 
 /* ---------- ACERCA DE NOSOTROS ---------- */
 .about{background:rgba(143,193,82,.06)}
-.about-in{display:grid; grid-template-columns:.9fr 1.1fr; gap:54px; align-items:center}
+.about-in{display:grid; grid-template-columns:.9fr 1.1fr; gap:54px 54px; align-items:center; grid-template-areas:"photo head" "photo body"}
+.about-photo{grid-area:photo}
+.about-head{grid-area:head; align-self:end}
+.about-body{grid-area:body; align-self:start}
 .about-photo{position:relative}
 .photo-frame::after{content:""; position:absolute; inset:12px; border:1px solid rgba(255,255,255,.55); border-radius:14px; pointer-events:none; z-index:2}
 .photo-frame{position:relative; z-index:1; aspect-ratio:4/5; border-radius:20px; overflow:hidden; background:linear-gradient(135deg, rgba(143,193,82,.2), rgba(67,160,65,.14)); box-shadow:var(--sombra); border:1px solid var(--linea)}
@@ -236,18 +239,19 @@ footer a:hover{opacity:1; color:var(--oro-claro)}
   .menu-toggle{display:block}
   .nav .btn-wa{display:none}
   /* HERO móvil/tablet: foto de fondo a todo lo ancho con el texto blanco encima */
-  .hero-in{display:block; padding:0; position:relative; min-height:78vh}
+  .hero-in{display:block; padding:0; position:relative; min-height:66vh}
   .hero-photo{position:absolute; inset:0; max-width:none; width:100%; margin:0; z-index:0}
   .hero-frame{height:100%; aspect-ratio:auto; border-radius:0; border:0; box-shadow:none; z-index:0}
   .hero-frame::after{display:none}
   .hero-photo::before{content:""; position:absolute; inset:0; z-index:1;
     background:linear-gradient(180deg, rgba(16,38,26,.48) 0%, rgba(16,38,26,.38) 40%, rgba(16,38,26,.68) 100%)}
   .hero-text{position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; text-align:center;
-    min-height:78vh; justify-content:center; padding:80px 22px 64px}
+    min-height:66vh; justify-content:center; padding:70px 22px 56px}
   .hero-text .eyebrow{color:#fff; letter-spacing:.16em}
-  .hero h1{color:#fff; font-size:clamp(2rem,7vw,3rem); line-height:1.2; margin-top:12px; text-shadow:0 2px 16px rgba(0,0,0,.45)}
+  .hero h1{color:#fff; font-size:clamp(1.75rem,5.6vw,2.4rem); line-height:1.25; margin-top:10px; text-shadow:0 2px 16px rgba(0,0,0,.45)}
   .hero h1 em{color:var(--verde-claro); text-shadow:0 2px 16px rgba(0,0,0,.5)}
-  .hero p.lead{color:rgba(255,255,255,.95); margin:16px auto 24px; max-width:34ch; text-shadow:0 1px 10px rgba(0,0,0,.4)}
+  .hero p.lead{display:none}
+  .hero .chips{display:none}
   .hero-cta{justify-content:center}
   .hero .btn-ghost{color:#fff; border-color:rgba(255,255,255,.8)}
   .hero .btn-ghost:hover{background:#fff; color:var(--bosque)}
@@ -260,8 +264,8 @@ footer a:hover{opacity:1; color:var(--oro-claro)}
   .cat-img{width:150px;height:150px}
   .grid,.a-grid{grid-template-columns:repeat(2,1fr)}
   .occasions{grid-template-columns:repeat(2,1fr)}
-  .about-in{grid-template-columns:1fr; gap:34px}
-  .about-photo{max-width:360px; margin:0 auto}
+  .about-in{grid-template-columns:1fr; gap:22px; grid-template-areas:"head" "photo" "body"}
+  .about-photo{max-width:340px; margin:0 auto}
   .b2b-in{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr 1fr}
@@ -451,9 +455,11 @@ footer a:hover{opacity:1; color:var(--oro-claro)}
         </span>
       </div>
     </div>
-    <div class="about-text reveal">
+    <div class="about-text about-head reveal">
       <span class="eyebrow">Acerca de nosotros</span>
       <h2>Hecho con amor, <em>por Adriana</em></h2>
+    </div>
+    <div class="about-text about-body reveal">
       <p>Las Delicias de Adri Fit nació en 2020 con un propósito muy especial: demostrar que comer saludable también puede ser delicioso. Durante la pandemia me formé como Coach de Hábitos Saludables y me especialicé en repostería saludable, motivada por algo muy cercano: el deseo de cuidar la salud de mi familia sin renunciar al placer de compartir un postre.</p>
       <p>En casa siempre nos han encantado los postres, pero también vivimos de cerca enfermedades como la diabetes y las intolerancias alimentarias. Así empecé a buscar alternativas para disfrutar los momentos especiales sin comprometer nuestro bienestar, y descubrí que alimentarse mejor no significa renunciar al sabor, sino elegir ingredientes de mayor calidad. Mi primera torta fue una de zanahoria que conquistó a mis clientes; hoy, junto a la torta de arándanos y los cheesecakes saludables, es una de las favoritas.</p>
       <p>Cada pedido se prepara de forma artesanal, libre de gluten y sin azúcar refinada, pensando en el gusto y el bienestar de cada cliente. Más que vender tortas, postres o desayunos, mi propósito es aportar bienestar, felicidad y calidad de vida — porque lo saludable, además de ser muy rico, también puede ayudarte a vivir mejor. Hoy seguimos creciendo con el sueño de llegar a más hogares y ser una referencia de repostería saludable en Colombia.</p>
